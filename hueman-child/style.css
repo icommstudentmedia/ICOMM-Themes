@@ -1,0 +1,154 @@
+/*
+Theme Name: Hueman Child
+Theme URI: http://alxmedia.se/themes/hueman/
+Version: 2.1.5
+Description: <a href="http://alxmedia.se/themes/hueman/">Hueman</a> is a responsive 100% high resolution theme for blogs and magazines. Unique toggle sidebars give a great browsing and reading experience on both tablet and mobile. The feature list is long: Unlimited topbar, header, footer and accent colors, unlimited widget areas, 0-2 sidebars to the left or right that can be uniquely specified for each page or post, 300px / 220px fixed width sidebars, 0-4 footer widget columns, almost zero layout images, related posts and post nav, featured story or slider, 10 post formats, good SEO, 3 flexible custom widgets, localisation support, social links, logo upload and many more useful admin panel features.
+Author: Alexander Agnarson
+Author URI: http://alxmedia.se
+Template: hueman
+Tags: light, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fluid-layout, fixed-layout, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+
+      Copyright: (c) 2013 Alexander "Alx" Agnarson
+      License: GNU General Public License v3.0
+      License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*
+For older themes, and themes that do not use wp_enqueue_style() to enqueue their stylesheet,
+use the following line where twentyfourteen is the name of the directory where the theme 
+resides:
+
+-- This is needed.
+*/
+@import url("../hueman/style.css");
+
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+/*For space below google map*/
+iframe {
+   margin-bottom: 10px;
+}
+
+/*Space below slider as well as image inside*/
+#advps_container1 {
+   margin-bottom: 80px;
+}
+.advps-slide a img {
+   width: 100%;
+}
+
+/*Change the top bar navigation - Get's too long*/
+@media only screen and (min-width: 1200px) {
+   #nav-topbar > .nav-wrap { height: auto!important; }
+   /* common */
+   #nav-topbar .nav { font-size: 0; position: relative; }
+   #nav-topbar .nav li a { color: #ccc; display: block; line-height: 20px; }
+   /* dropdown arrows */
+   #nav-topbar .nav li > a:after { content: "\f0da"; float: right; opacity: 0.5; }
+   #nav-topbar .nav > li > a:after {content: "\f0d7"; float: none; margin-left: 6px; font-size: 14px; }
+   #nav-topbar .nav li > a:only-child:after {content: ""; margin: 0; }
+   /* level 1 */
+   #nav-topbar .nav > li { font-size: 16px; border-right: 1px solid #999; display: inline-block; position: relative; }
+   #nav-topbar .nav > li > a { padding: 15px 14px; }
+   #nav-topbar .nav > li > a:hover, 
+   #nav-topbar .nav > li:hover > a { background: #777; }
+   #nav-topbar .nav li > a:hover, 
+   #nav-topbar .nav li:hover > a, 
+   #nav-topbar .nav li.current_page_item > a, 
+   #nav-topbar .nav li.current-menu-item > a,
+   #nav-topbar .nav li.current-menu-ancestor > a,
+   #nav-topbar .nav li.current-post-parent > a { color: #fff; }
+   /* level 2 & 3 */
+   #nav-topbar .nav li:hover > ul { display: block; }
+   #nav-topbar .nav ul { display: none; background: #777; position: absolute; left: 0; top: 50px; width: 180px; padding: 10px 0; z-index: 2; -webkit-transform: translateZ(0);
+   -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+   box-shadow: 0 2px 2px rgba(0,0,0,0.15); }
+   #nav-topbar .nav ul li { font-size: 14px; position: relative; display: block; padding: 0; }
+   #nav-topbar .nav ul li a { padding: 10px 20px; }
+   #nav-topbar .nav ul li:last-child { border-bottom: 0!important; }
+   /* level 3 */
+   #nav-topbar .nav ul ul { position: absolute; top: -10px; left: 180px; }
+   
+   /* common */
+   #nav-topbar .nav {  }
+   #nav-topbar .nav li a { color: #fff; color: rgba(255,255,255,0.7); } 
+   /* level 1 */
+   #nav-topbar .nav > li { border-right: none; }
+   #nav-topbar .nav > li > a:hover, 
+   #nav-topbar .nav > li:hover > a { background-color: rgba(0,0,0,0.1); }
+   #nav-topbar .nav li > a:hover, 
+   #nav-topbar .nav li:hover > a, 
+   #nav-topbar .nav li.current_page_item > a, 
+   #nav-topbar .nav li.current-menu-item > a,
+   #nav-topbar .nav li.current-menu-ancestor > a,
+   #nav-topbar .nav li.current-post-parent > a { color: #fff; }
+   /* level 2 & 3 */
+   #nav-topbar .nav ul { background: #26272b url(img/opacity-10.png) repeat; }
+   #nav-topbar .nav ul li { box-shadow: 0 1px 0 rgba(255,255,255,0.06); -webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.06); }
+   #nav-topbar .nav ul li:last-child { box-shadow: none; -webkit-box-shadow: none; }
+   
+}
+
+@media only screen and (max-width: 1099px) {
+
+   #nav-topbar .nav { font-weight: 600; }
+   #nav-topbar .nav-container { text-transform: none; }
+   #nav-topbar .nav-toggle,
+   #nav-topbar .nav-text { display: block; }
+   #nav-topbar .nav-wrap { position: relative; float: left; width: 100%; height: 0; overflow: hidden; }
+   #nav-topbar .nav-wrap.transition {
+   -webkit-transition: height 0.35s ease;
+   -moz-transition: height 0.35s ease;
+   -o-transition: height 0.35s ease;
+   transition: height 0.35s ease; }
+   #nav-topbar .expand .nav-wrap { height: auto; }
+   /* common */
+   #nav-topbar .nav { float: left; width: 100%; }
+   #nav-topbar .nav li a { line-height: 20px; display: block; padding: 8px 20px; }
+   #nav-topbar .nav li li a { padding-left: 15px; padding-right: 15px; }
+   /* dropdown arrows */
+   #nav-topbar .nav li > a:after { content: '\f0d7'; opacity: 0.5; margin-left: 6px; }
+   #nav-topbar .nav > li > a:after { content: '\f0d7'; font-size: 14px; }
+   #nav-topbar .nav li > a:only-child:after { content: ''; }
+   /* level 1 */
+   #nav-topbar .nav > li { font-size: 15px; }
+   #nav-topbar .nav li > a:hover, 
+   #nav-topbar .nav li.current_page_item > a, 
+   #nav-topbar .nav li.current-menu-item > a,
+   #nav-topbar .nav li.current-post-parent > a { color: #fff; }   
+   /* level 2 & 3 */
+   #nav-topbar .nav ul { display: block!important; margin-left: 40px; }
+   #nav-topbar .nav ul li { font-size: 13px; font-weight: 300; }
+   #nav-topbar .nav ul li a { padding-top: 6px; padding-bottom: 6px; }
+
+   /* common */
+   #nav-topbar .nav li a { color: #fff; color: rgba(255,255,255,0.8); border-top: 1px solid rgba(255,255,255,0.06); }   
+   /* level 1 */
+   #nav-topbar .nav li > a:hover { background: rgba(0,0,0,0.15); color: #fff; }
+   #nav-topbar .nav li.current_page_item > a, 
+   #nav-topbar .nav li.current-menu-item > a,
+   #nav-topbar .nav li.current-post-parent > a { background: rgba(0,0,0,0.15); color: #fff; }
+   
+
+}
+
+/* Get rid of slider - Get's too small. */
+@media only screen and  (max-width: 850px) {
+   #advps_container1 {
+      display: none;
+   }
+}
+
+
+/* Mobile - 480px & 320px */
+@media only screen and (min-width: 480px) and (max-width: 719px) {
+   
+}
+
+
+/* Mobile - 320px */
+@media only screen and (max-width: 479px) {
+   
+}

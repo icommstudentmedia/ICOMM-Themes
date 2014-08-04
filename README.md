@@ -1,0 +1,1 @@
+This repository will only have the different themes that are a part of the Scroll's wordpress install.
